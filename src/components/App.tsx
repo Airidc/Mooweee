@@ -7,7 +7,15 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <div className="content">content</div>
+        <header className="header">
+          <ul className="header--list">
+            <li className="header--list--item">Home</li>
+            <li className="header--list--item">Categories</li>
+            <li className="header--list--item">Home</li>
+            <li className="header--list--item">Home</li>
+          </ul>
+        </header>
+        <div className="content"></div>
       </Router>
     </Provider>
   );
