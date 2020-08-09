@@ -1,0 +1,28 @@
+.logo {
+  width: 20%;
+  height: 25%;
+  margin-left: auto;
+  max-height: 100px;
+  justify-self: center;
+  align-self: center;
+
+  @media only screen and (min-width: 650px) {
+    // height: 25%;
+    margin-left: unset;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+  }
+
+  &--text {
+    display: none;
+
+    @media only screen and (min-width: 650px) {
+      display: flex;
+      padding-left: 1em;
+      align-self: center;
+      color: $text-main;
+    }
+  }
+}

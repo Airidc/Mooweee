@@ -1,0 +1,36 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto;
+  padding: 1em 0;
+  color: $text-main;
+  height: min-content;
+
+  @media only screen and (min-width: 650px) {
+    // flex-wrap: wrap;
+    width: 95%;
+    justify-content: space-between;
+  }
+
+  &--text {
+    text-align: center;
+    width: 100%;
+    flex: 1 0 100%;
+    margin: 1em auto;
+    font-weight: 300;
+    order: 2;
+    -ms-flex-order: 2;
+
+    @media only screen and (min-width: 650px) {
+      width: 40%;
+      text-align: start;
+      margin: 1em 0;
+      flex: 0 0 auto;
+      order: unset;
+      -ms-flex-order: unset;
+    }
+  }
+}

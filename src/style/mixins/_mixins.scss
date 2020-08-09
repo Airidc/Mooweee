@@ -1,0 +1,28 @@
+@mixin reset-list-style {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin shadow {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@mixin background-pattern {
+  background-image: linear-gradient(
+    135deg,
+    #1b262c 25%,
+    #223037 25%,
+    #223037 50%,
+    #1b262c 50%,
+    #1b262c 75%,
+    #223037 75%,
+    #223037 100%
+  );
+  background-size: 10px 10px;
+}

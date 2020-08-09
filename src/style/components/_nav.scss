@@ -1,0 +1,120 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  height: 50%;
+
+  position: relative;
+
+  color: $text-main;
+  font-family: "Montserrat", sans-serif;
+
+  @media only screen and (min-width: 950px) {
+    position: unset;
+
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    width: 100%;
+  }
+
+  &--hamburger {
+    fill: $purple;
+    order: 99;
+    align-self: flex-end;
+    background-color: $background-contrast;
+
+    border: 1px solid $purple;
+    border-radius: 30%;
+    padding: 1em;
+    margin-top: 1em;
+  }
+
+  &-list {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    justify-items: center;
+
+    background-color: $background-site;
+    margin: auto;
+    padding: 1em 2em;
+    border-radius: $radius;
+
+    @media only screen and (min-width: 650px) {
+      position: unset;
+      background-color: unset;
+      display: flex;
+      // width: auto;
+      flex-direction: column;
+      justify-items: center;
+
+      margin: auto;
+    }
+
+    &--item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+
+      font-size: $font-size-large;
+      margin: 0.75em auto;
+
+      & img {
+        padding-right: $spacing;
+      }
+    }
+  }
+}
+
+.hide-mobile {
+  display: none;
+}
+
+@media only screen and (min-width: 650px) {
+  .show-desktop {
+    display: flex;
+  }
+
+  .hide-desktop {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 950px) {
+}
+
+// .nav {
+//   display: flex;
+//   flex-direction: column;
+//   justify-self: center;
+//   height: 50%;
+//   width: 100%;
+
+//   color: $text-main;
+//   font-family: "Montserrat", sans-serif;
+
+//   &-list {
+//     display: flex;
+//     width: auto;
+//     flex-direction: column;
+//     justify-items: center;
+
+//     margin: auto;
+
+//     &--item {
+//       display: flex;
+//       justify-content: flex-start;
+//       align-items: center;
+//       width: 100%;
+
+//       font-size: $font-size-large;
+//       margin: 0.75em auto;
+
+//       & img {
+//         padding-right: $spacing;
+//       }
+//     }
+//   }
+// }
