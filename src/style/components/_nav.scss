@@ -4,7 +4,14 @@
   justify-self: center;
   height: 50%;
 
-  position: relative;
+  flex-grow: 1;
+  // position: absolute;
+  // right: 5%;
+  // top: 50%;
+  height: 100%;
+  padding: 1em;
+
+  background-color: $dark-contrast;
 
   color: $text-main;
   font-family: "Montserrat", sans-serif;
@@ -19,27 +26,26 @@
   }
 
   &--hamburger {
+    display: flex;
+    justify-content: flex-end;
     fill: $purple;
-    order: 99;
-    align-self: flex-end;
-    background-color: $background-contrast;
-
-    border: 1px solid $purple;
-    border-radius: 30%;
-    padding: 1em;
-    margin-top: 1em;
+    width: 50%;
+    // order: 99;
+    align-self: center;
+    justify-self: flex-end;
+    // background-color: $background-contrast;
   }
 
-  &-list {
+  &--list {
     display: flex;
     width: auto;
     flex-direction: column;
     justify-items: center;
 
-    background-color: $background-site;
+    background-color: $dark-contrast;
+    // background-color: $background-site;
     margin: auto;
-    padding: 1em 2em;
-    border-radius: $radius;
+    // border-radius: $radius;
 
     @media only screen and (min-width: 650px) {
       position: unset;

@@ -1,28 +1,25 @@
 .logo {
-  width: 20%;
-  height: 25%;
-  margin-left: auto;
-  max-height: 100px;
-  justify-self: center;
+  width: 50%;
+  height: 100%;
+  // margin-left: auto;
+  // justify-self: center;
+  // align-self: center;
+
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
   align-self: center;
 
-  @media only screen and (min-width: 650px) {
-    // height: 25%;
-    margin-left: unset;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-self: center;
-  }
+  // @media only screen and (min-width: 650px) {
+  // }
 
   &--text {
-    display: none;
+    cursor: pointer;
 
-    @media only screen and (min-width: 650px) {
-      display: flex;
-      padding-left: 1em;
-      align-self: center;
-      color: $text-main;
-    }
+    display: flex;
+    padding-left: 1em;
+    align-self: center;
+    color: $text-main;
   }
 }

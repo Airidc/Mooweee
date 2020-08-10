@@ -2,20 +2,24 @@ import { combineReducers, compose } from "redux";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
-const tmdbInitialState = {
-  imageUrl: "https://image.tmdb.org/t/p/original",
-  apiUrl: "https://api.themoviedb.org/3",
-  apiKey: process.env.REACT_APP_API_KEY,
-};
+import { tmdbInitialState, TmdbState } from "./initial-state";
 
-export const tmdbReducer = (state = tmdbInitialState, action: any) => {
+export interface IAction<A, P> {
+  type: A;
+  payload: P;
+}
+
+export const tmdbReducer = (
+  state = tmdbInitialState,
+  action: IAction<any, TmdbState>
+): TmdbState | {} => {
   switch (action.type) {
     default:
       return state;
   }
 };
 
-const rootReducer = combineReducers({ tmdbReducer });
+const rootReducer = combineReducers({ tmdb: tmdbReducer });
 
 const enhancers = compose(
   applyMiddleware(thunk),

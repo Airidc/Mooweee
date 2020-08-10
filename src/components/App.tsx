@@ -3,18 +3,13 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "../store/store";
 
+import Header from "./shared/Header";
+
 function App() {
   return (
     <Provider store={store}>
       <Router>
-        <header className="header">
-          <ul className="header--list">
-            <li className="header--list--item">Home</li>
-            <li className="header--list--item">Categories</li>
-            <li className="header--list--item">Home</li>
-            <li className="header--list--item">Home</li>
-          </ul>
-        </header>
+        <Header></Header>
         <div className="content"></div>
       </Router>
     </Provider>
