@@ -11,8 +11,9 @@
   justify-content: left;
   align-self: center;
 
-  // @media only screen and (min-width: 650px) {
-  // }
+  @media only screen and (min-width: 650px) {
+    width: 25%;
+  }
 
   &--text {
     cursor: pointer;

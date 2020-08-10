@@ -5,13 +5,8 @@
   height: 50%;
 
   flex-grow: 1;
-  // position: absolute;
-  // right: 5%;
-  // top: 50%;
   height: 100%;
   padding: 1em;
-
-  background-color: $dark-contrast;
 
   color: $text-main;
   font-family: "Montserrat", sans-serif;
@@ -22,7 +17,7 @@
     display: flex;
     flex-direction: column;
     justify-self: center;
-    width: 100%;
+    width: 75%;
   }
 
   &--hamburger {
@@ -40,9 +35,7 @@
     display: flex;
     width: auto;
     flex-direction: column;
-    justify-items: center;
 
-    background-color: $dark-contrast;
     // background-color: $background-site;
     margin: auto;
     // border-radius: $radius;
@@ -51,11 +44,11 @@
       position: unset;
       background-color: unset;
       display: flex;
-      // width: auto;
-      flex-direction: column;
-      justify-items: center;
+      width: 80%;
+      flex-direction: row;
 
-      margin: auto;
+      margin: unset;
+      margin-left: auto;
     }
 
     &--item {
