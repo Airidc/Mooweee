@@ -3,6 +3,7 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 import { tmdbInitialState, TmdbState } from "./initial-state";
+import { homeReducer } from "../components/Home/home-reducer";
 
 export interface IAction<A, P> {
   type: A;
@@ -12,14 +13,15 @@ export interface IAction<A, P> {
 export const tmdbReducer = (
   state = tmdbInitialState,
   action: IAction<any, TmdbState>
-): TmdbState | {} => {
+): TmdbState => {
   switch (action.type) {
+    // case ADD_NEW_MOVIES
     default:
       return state;
   }
 };
 
-const rootReducer = combineReducers({ tmdb: tmdbReducer });
+const rootReducer = combineReducers({ tmdb: tmdbReducer, home: homeReducer });
 
 const enhancers = compose(
   applyMiddleware(thunk),
@@ -29,3 +31,4 @@ const enhancers = compose(
 );
 
 export const store = createStore(rootReducer, enhancers);
+export type RootState = ReturnType<typeof rootReducer>;

@@ -1,13 +1,24 @@
 export interface TmdbState {
-  genres: Genre[];
   imageUrl: string;
   apiUrl: string;
   apiKey: string;
+  genres: Genre[];
+  endpointPaths: Enpoints;
 }
 
 export interface Genre {
   id: number;
   name: string;
+}
+
+export interface Enpoints {
+  searchMovie: string;
+  searchTv: string;
+  trendingTv: string;
+  trendingTvToday: string;
+  trendingMovies: string;
+  trendingMoviesToday: string;
+  popularMovies: string;
 }
 
 export const tmdbInitialState: TmdbState = {
@@ -92,4 +103,13 @@ export const tmdbInitialState: TmdbState = {
   imageUrl: "https://image.tmdb.org/t/p/original",
   apiUrl: "https://api.themoviedb.org/3",
   apiKey: process.env.REACT_APP_API_KEY as string,
+  endpointPaths: {
+    searchMovie: "/search/movie",
+    searchTv: "/search/tv",
+    trendingTv: "/trending/tv/week",
+    trendingTvToday: "/trending/tv/day",
+    trendingMovies: "/trending/movie/week",
+    trendingMoviesToday: "/trending/movie/day",
+    popularMovies: "/movie/popular",
+  },
 };

@@ -10,6 +10,7 @@
 
   color: $text-main;
   font-family: "Montserrat", sans-serif;
+  font-weight: bold;
 
   @media only screen and (min-width: 950px) {
     position: unset;
@@ -20,10 +21,15 @@
     width: 75%;
   }
 
+  @media only screen and (min-width: 1200px) {
+    width: 50%;
+    flex-grow: unset;
+  }
+
   &--hamburger {
     display: flex;
     justify-content: flex-end;
-    fill: $purple;
+    fill: $athens-gray;
     width: 50%;
     // order: 99;
     align-self: center;
@@ -83,37 +89,3 @@
 
 @media only screen and (min-width: 950px) {
 }
-
-// .nav {
-//   display: flex;
-//   flex-direction: column;
-//   justify-self: center;
-//   height: 50%;
-//   width: 100%;
-
-//   color: $text-main;
-//   font-family: "Montserrat", sans-serif;
-
-//   &-list {
-//     display: flex;
-//     width: auto;
-//     flex-direction: column;
-//     justify-items: center;
-
-//     margin: auto;
-
-//     &--item {
-//       display: flex;
-//       justify-content: flex-start;
-//       align-items: center;
-//       width: 100%;
-
-//       font-size: $font-size-large;
-//       margin: 0.75em auto;
-
-//       & img {
-//         padding-right: $spacing;
-//       }
-//     }
-//   }
-// }

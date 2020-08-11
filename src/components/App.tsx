@@ -1,10 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  BrowserRouterProps,
+  RouteComponentProps,
+} from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "../store/store";
 
 import Header from "./shared/Header";
 import Home from "./Home/Home";
+import Movie from "./Movie/Movie";
 
 function App() {
   return (
@@ -13,6 +19,11 @@ function App() {
         <Header></Header>
         <div className="content">
           <Route exact path="/" component={Home}></Route>
+          <Route
+            path="/movie/:id"
+            component={Movie}
+            // render={(props: RouteComponentProps) => <Movie {...props}></Movie>}
+          ></Route>
         </div>
       </Router>
     </Provider>

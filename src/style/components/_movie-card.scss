@@ -1,0 +1,94 @@
+@import "../base/colors";
+@import "../base/config";
+
+.movie--card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  padding-bottom: 1em;
+
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 135%;
+  transition: all 0.3s ease-in-out;
+
+  min-height: 350px;
+
+  height: 100%;
+  width: 100%;
+
+  &:hover {
+    background-size: 155%;
+  }
+
+  &--row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 95%;
+    margin: 0.5em auto;
+
+    &--genre {
+      justify-content: start;
+      margin: 0.1em 0;
+    }
+  }
+
+  &--genre {
+    justify-content: start;
+    padding: 0.5em;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+  }
+
+  &--ratings {
+    margin: 1em auto;
+    // width: 95%;
+
+    h4 {
+      background-color: $pale-green-alpha;
+      border: 2px solid $pale-green;
+      border-radius: $radius / 2;
+
+      width: fit-content;
+
+      line-height: 1rem;
+      text-align: center;
+      margin: unset;
+      padding: 0.75em 1.25em;
+
+      letter-spacing: 0.05rem;
+    }
+  }
+
+  &--title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.051rem;
+    justify-self: start;
+    // width: fit-content;
+    width: 100%;
+    // max-width: 95%;
+    // margin: 1em;
+    margin: auto;
+    margin-bottom: 0;
+  }
+
+  &--description {
+    font-family: $font-secondary;
+    color: $text-secondary;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+    line-height: 1rem;
+    width: 35%;
+    margin-top: 1em;
+    // margin: 1em auto;
+
+    text-overflow: ellipsis;
+  }
+}
