@@ -1,27 +1,14 @@
 // For naming colors variables, we recommend use http://chir.ag/projects/name-that-color/
 
 // MAIN COLOR PALETTE
-$white: #fff;
-$light-gray: #e5e5e5;
-$purple: #9180d7;
-$purple-second: #6e86dd;
-$dark: #1f2b32;
-$dark-secondary: #223037;
-$dark-contrast: #1b262c;
-$table-row: #78787850;
+$dark-charcoal: #333333;
 $pale-green: #00b488;
 $pale-green-alpha: #00b48750;
-$white-ice: #e5faf6;
 $athens-gray: #f9f9fb;
-$valentino: #4a144b;
-$radical-red: #fa3150;
+$silver-sand: #c5c5c5;
+$strong-cyan: #0086b4;
 
-$background-site: $dark;
-$background-contrast: $dark-secondary;
-// $background-secondary: $athens-gray;
-// $background-active: rgba($active, 0.1);
-//$background-shadow: rgba(0, 0, 0, 0.04);
+$background-site: $dark-charcoal; // ORIGINAL
 
-$text-main: $light-gray;
-$text-contrast: $white-ice;
-$text-secondary: $light-gray;
+$text-main: $athens-gray;
+$text-secondary: $silver-sand;

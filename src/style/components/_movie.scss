@@ -1,0 +1,73 @@
+@import "../mixins/mixins";
+
+.movie--wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 1em auto;
+}
+
+.movie--section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 3em;
+
+  &--details {
+    flex-direction: row;
+  }
+
+  &--info {
+    width: 45%;
+    margin: 1em auto;
+  }
+
+  &--title {
+    color: $pale-green;
+  }
+
+  &--genre--wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2em 0;
+  }
+}
+
+.movie--poster {
+  width: 49%;
+  @include shadow;
+}
+
+.movie--description {
+  letter-spacing: 0.025rem;
+  line-height: 1rem;
+}
+
+.movie--text--info {
+  color: $text-secondary;
+  letter-spacing: 0.05rem;
+  line-height: 1rem;
+  margin-bottom: 1em;
+}
+
+// Extract to separate component later
+.actor-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actor--profile-picture {
+  width: 10%;
+
+  &--none {
+    display: flex;
+    justify-content: start;
+    height: 100%;
+    text-align: center;
+  }
+}
+
+.actor--info {
+  width: 85%;
+}

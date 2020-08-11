@@ -4,6 +4,7 @@ import thunk from "redux-thunk";
 
 import { tmdbInitialState, TmdbState } from "./initial-state";
 import { homeReducer } from "../components/Home/home-reducer";
+import { movieReducer } from "../components/Movie/movie-reducer";
 
 export interface IAction<A, P> {
   type: A;
@@ -21,7 +22,11 @@ export const tmdbReducer = (
   }
 };
 
-const rootReducer = combineReducers({ tmdb: tmdbReducer, home: homeReducer });
+const rootReducer = combineReducers({
+  tmdb: tmdbReducer,
+  home: homeReducer,
+  movies: movieReducer,
+});
 
 const enhancers = compose(
   applyMiddleware(thunk),

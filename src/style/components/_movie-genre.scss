@@ -1,0 +1,11 @@
+.movie--genre {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.5em;
+  margin-right: 0.5em;
+  margin-top: 0.5em;
+  width: fit-content;
+  border: 2px solid $pale-green-alpha;
+  border-radius: $radius / 2;
+}

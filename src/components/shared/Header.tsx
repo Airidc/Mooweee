@@ -1,10 +1,17 @@
 import React, { ReactElement } from "react";
 
 import logo from "../../assets/icons/logo.svg";
+import { useHistory } from "react-router-dom";
 
 export default function Header(): ReactElement {
+  const browserHistory = useHistory();
+
+  const goHome = (e: React.MouseEvent) => {
+    e.preventDefault();
+    browserHistory.push("/");
+  };
+
   const toggleOpen = (e: React.MouseEvent) => {
-    console.log(e);
     let menuElem = document.querySelector(".nav");
 
     if (!menuElem) return;
@@ -22,7 +29,7 @@ export default function Header(): ReactElement {
   return (
     <>
       <header className="header">
-        <div className="logo">
+        <div className="logo" onClick={goHome}>
           <img src={logo} alt="logo" />
           <h3 className="logo--text">MooWee!</h3>
         </div>

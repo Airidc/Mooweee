@@ -17,9 +17,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Link to="/">
-          <Header></Header>
-        </Link>
+        <Header></Header>
         <div className="content">
           <Route exact path="/" component={Home}></Route>
           <Route

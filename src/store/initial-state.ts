@@ -13,12 +13,14 @@ export interface Genre {
 
 export interface Enpoints {
   searchMovie: string;
+  searchMovieById: string;
   searchTv: string;
   trendingTv: string;
   trendingTvToday: string;
   trendingMovies: string;
   trendingMoviesToday: string;
   popularMovies: string;
+  cast: string;
 }
 
 export const tmdbInitialState: TmdbState = {
@@ -105,11 +107,13 @@ export const tmdbInitialState: TmdbState = {
   apiKey: process.env.REACT_APP_API_KEY as string,
   endpointPaths: {
     searchMovie: "/search/movie",
+    searchMovieById: "/movie/",
     searchTv: "/search/tv",
     trendingTv: "/trending/tv/week",
     trendingTvToday: "/trending/tv/day",
     trendingMovies: "/trending/movie/week",
     trendingMoviesToday: "/trending/movie/day",
     popularMovies: "/movie/popular",
+    cast: "/movie/%ID%/credits",
   },
 };

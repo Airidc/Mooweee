@@ -2,6 +2,8 @@ import React, { ReactElement } from "react";
 import { Movie } from "../Home/home-reducer";
 import { TmdbState } from "../../store/initial-state";
 import { Link } from "react-router-dom";
+import MovieGenre from "./MovieGenre";
+import MovieRatings from "./MovieRatings";
 
 interface Props {
   movie: Movie;
@@ -23,24 +25,18 @@ export default function MovieCard({ movie, tmdb }: Props): ReactElement {
         <div className="movie--card--row ">
           <h1 className="movie--card--title">{movie.original_title}</h1>
           <div className="movie--card--row movie--card--row--genre">
-            {movie.genre_ids.map((genreId) => (
-              <p className="movie--card--genre" key={genreId}>
-                {tmdb.genres.find((genre) => genre.id == genreId)?.name}
-              </p>
-            ))}
+            {movie.genre_ids.map((genreId) => {
+              let genre = tmdb.genres.find((genre) => genre.id == genreId);
+              return genre ? <MovieGenre genre={genre} key={genre.id} /> : "";
+            })}
           </div>
         </div>
 
         <div className="movie--card--row">
           <p className="movie--card--description">
-            {movie.overview.slice(0, 100)}
+            {movie.overview.slice(0, 100)}...
           </p>
-          <div className="movie--card--ratings">
-            <h4>
-              {/* {movie.vote_average} / 10 ⭐ ({movie.vote_count} votes) */}
-              {movie.vote_average} / 10 🐮 ({movie.vote_count} votes)
-            </h4>
-          </div>
+          <MovieRatings rating={movie.vote_average} votes={movie.vote_count} />
         </div>
       </div>
     </Link>
