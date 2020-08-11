@@ -1,11 +1,15 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 import { Router, RouteComponentProps } from "react-router-dom";
 
-export default function Movie(router: RouteComponentProps): ReactElement {
+type IdSlug = { id: string };
+
+export default function Movie({
+  match,
+}: RouteComponentProps<IdSlug>): ReactElement {
   const tmdb = useSelector((state: RootState) => state.tmdb);
   const movies = useSelector((state: RootState) => state.home.movies);
 
-  return <div></div>;
+  return <div>{JSON.stringify(match.params.id)}</div>;
 }

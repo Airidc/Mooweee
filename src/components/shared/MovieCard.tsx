@@ -18,7 +18,7 @@ export default function MovieCard({ movie, tmdb }: Props): ReactElement {
   };
 
   return (
-    <Link to={`home/${movie.id}`}>
+    <Link to={`/movie/${movie.id}`}>
       <div className="movie--card" style={style}>
         <div className="movie--card--row ">
           <h1 className="movie--card--title">{movie.original_title}</h1>
@@ -34,9 +34,6 @@ export default function MovieCard({ movie, tmdb }: Props): ReactElement {
         <div className="movie--card--row">
           <p className="movie--card--description">
             {movie.overview.slice(0, 100)}
-            <a href="#">
-              <i>...more</i>
-            </a>
           </p>
           <div className="movie--card--ratings">
             <h4>

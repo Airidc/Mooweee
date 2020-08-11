@@ -4,6 +4,7 @@ import {
   Route,
   BrowserRouterProps,
   RouteComponentProps,
+  Link,
 } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "../store/store";
@@ -16,10 +17,13 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Header></Header>
+        <Link to="/">
+          <Header></Header>
+        </Link>
         <div className="content">
           <Route exact path="/" component={Home}></Route>
           <Route
+            exact
             path="/movie/:id"
             component={Movie}
             // render={(props: RouteComponentProps) => <Movie {...props}></Movie>}
