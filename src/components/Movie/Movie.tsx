@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Router, RouteComponentProps } from "react-router-dom";
+import { RouteComponentProps } from "react-router-dom";
 
 import axios from "axios";
 
@@ -51,7 +51,7 @@ export default function Movie({
         });
       })();
     }
-  }, []);
+  });
 
   return (
     <>

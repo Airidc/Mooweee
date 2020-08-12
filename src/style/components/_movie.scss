@@ -58,16 +58,17 @@
 }
 
 .actor--profile-picture {
-  width: 10%;
+  width: 15%;
+  object-fit: cover;
 
   &--none {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     height: 100%;
     text-align: center;
   }
 }
 
 .actor--info {
-  width: 85%;
+  width: 70%;
 }

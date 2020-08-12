@@ -26,7 +26,7 @@ export default function MovieCard({ movie, tmdb }: Props): ReactElement {
           <h1 className="movie--card--title">{movie.original_title}</h1>
           <div className="movie--card--row movie--card--row--genre">
             {movie.genre_ids.map((genreId) => {
-              let genre = tmdb.genres.find((genre) => genre.id == genreId);
+              let genre = tmdb.genres.find((genre) => genre.id === genreId);
               return genre ? <MovieGenre genre={genre} key={genre.id} /> : "";
             })}
           </div>
