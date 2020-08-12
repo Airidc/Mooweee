@@ -4,8 +4,8 @@ import { Provider } from "react-redux";
 import { store } from "../store/store";
 
 import Header from "./shared/Header";
-import Home from "./Home/Home";
-import Movie from "./Movie/Movie";
+import Home from "./Movies/Movies";
+import MovieInfoPage from "./MovieInfo/MovieInfoPage";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           <Route
             exact
             path="/movie/:id"
-            component={Movie}
+            component={MovieInfoPage}
             // render={(props: RouteComponentProps) => <Movie {...props}></Movie>}
           ></Route>
         </div>

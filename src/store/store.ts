@@ -3,8 +3,8 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 import { tmdbInitialState, TmdbState } from "./initial-state";
-import { homeReducer } from "../components/Home/home-reducer";
-import { movieReducer } from "../components/Movie/movie-reducer";
+import { moviesReducer } from "../components/Movies/movies-reducer";
+import { movieInfoReducer } from "../components/MovieInfo/movieInfo-reducer";
 
 export interface IAction<A, P> {
   type: A;
@@ -24,8 +24,8 @@ export const tmdbReducer = (
 
 const rootReducer = combineReducers({
   tmdb: tmdbReducer,
-  home: homeReducer,
-  movies: movieReducer,
+  movies: moviesReducer,
+  movieInfo: movieInfoReducer,
 });
 
 const enhancers = compose(

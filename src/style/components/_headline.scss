@@ -1,0 +1,15 @@
+.headline {
+  display: flex;
+  align-items: center;
+
+  margin-top: 7em;
+  margin-bottom: 3em;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  input {
+    height: 2rem;
+  }
+}

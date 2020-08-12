@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 
 import logo from "../../assets/icons/logo.svg";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 export default function Header(): ReactElement {
   const browserHistory = useHistory();
@@ -46,11 +46,26 @@ export default function Header(): ReactElement {
           </svg>
         </div>
         <nav className="nav show-desktop hide-mobile">
+          <div className="search--input--area">
+            <input
+              type="text"
+              className="search--input"
+              placeholder="Got any particular movie in mind?"
+              name="search"
+              id=""
+            />
+            <button>Search</button>
+          </div>
           <ul className="nav--list">
-            <li className="nav--list--item">Home</li>
-            <li className="nav--list--item">Genres</li>
-            <li className="nav--list--item">Trending</li>
-            <li className="nav--list--item">Surprise Me</li>
+            <li className="nav--list--item">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="nav--list--item">
+              <Link to="/genres">Genres</Link>
+            </li>
+            <li className="nav--list--item">
+              <Link to="/random">Surprise Me</Link>
+            </li>
           </ul>
         </nav>
       </header>

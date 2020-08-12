@@ -5,18 +5,18 @@ import { RouteComponentProps } from "react-router-dom";
 import axios from "axios";
 
 import { RootState } from "../../store/store";
-import * as actions from "./movie-actions";
-import { MovieInfo } from "./movie-reducer";
+import * as actions from "./movieInfo-actions";
+import { MovieInfo } from "./movieInfo-reducer";
 import MovieGenre from "../shared/MovieGenre";
 import MovieRatings from "../shared/MovieRatings";
 
 type IdSlug = { id: string };
 
-export default function Movie({
+export default function MovieInfoPage({
   match,
 }: RouteComponentProps<IdSlug>): ReactElement {
   const tmdb = useSelector((state: RootState) => state.tmdb);
-  const movies = useSelector((state: RootState) => state.movies.movies);
+  const movies = useSelector((state: RootState) => state.movieInfo.movies);
   const movieInfo: MovieInfo | null =
     movies.find(
       (movie: MovieInfo) => movie && movie.id === parseInt(match.params.id)
@@ -46,7 +46,7 @@ export default function Movie({
         movieResp.cast = castResp.cast;
 
         dispatch({
-          type: actions.MovieActionTypes.ADD_MOVIE,
+          type: actions.MovieInfoActionTypes.ADD_MOVIE,
           payload: movieResp,
         });
       })();

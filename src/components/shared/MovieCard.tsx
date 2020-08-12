@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
-import { Movie } from "../Home/home-reducer";
+import { Movie } from "../Movies/movies-reducer";
 import { TmdbState } from "../../store/initial-state";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import MovieGenre from "./MovieGenre";
 import MovieRatings from "./MovieRatings";
 
@@ -11,6 +11,8 @@ interface Props {
 }
 
 export default function MovieCard({ movie, tmdb }: Props): ReactElement {
+  const browserHistory = useHistory();
+
   const style: React.CSSProperties = {
     backgroundImage: `linear-gradient(
             180deg,rgba(0, 0, 0, 0.1) 0.03%,
@@ -19,9 +21,13 @@ export default function MovieCard({ movie, tmdb }: Props): ReactElement {
             url("${tmdb.imageUrl}${movie.backdrop_path}")`,
   };
 
+  const goToMoviePage = () => {
+    browserHistory.push(`/movie/${movie.id}`);
+  };
+
   return (
-    <Link to={`/movie/${movie.id}`}>
-      <div className="movie--card" style={style}>
+    <>
+      <div className="movie--card" style={style} onClick={goToMoviePage}>
         <div className="movie--card--row ">
           <h1 className="movie--card--title">{movie.original_title}</h1>
           <div className="movie--card--row movie--card--row--genre">
@@ -39,6 +45,6 @@ export default function MovieCard({ movie, tmdb }: Props): ReactElement {
           <MovieRatings rating={movie.vote_average} votes={movie.vote_count} />
         </div>
       </div>
-    </Link>
+    </>
   );
 }

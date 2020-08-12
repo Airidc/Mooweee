@@ -1,8 +1,8 @@
 import { IAction } from "../../store/store";
-import { MovieActionTypes } from "./movie-actions";
+import { MovieInfoActionTypes } from "./movieInfo-actions";
 import { Genre } from "../../store/initial-state";
 
-export interface MovieState {
+export interface MovieInfoState {
   movies: MovieInfo[];
 }
 
@@ -57,27 +57,20 @@ export interface CountryInfo {
   name: string;
 }
 
-const initialState: MovieState = {
+const initialState: MovieInfoState = {
   movies: [],
 };
 
-export const movieReducer = (
-  state: MovieState = initialState,
-  action: IAction<MovieActionTypes, any>
-): MovieState => {
+export const movieInfoReducer = (
+  state: MovieInfoState = initialState,
+  action: IAction<MovieInfoActionTypes, any>
+): MovieInfoState => {
   switch (action.type) {
-    case MovieActionTypes.ADD_MOVIE:
+    case MovieInfoActionTypes.ADD_MOVIE:
       return {
         ...state,
         movies: [...state.movies, action.payload as MovieInfo],
-      } as MovieState;
-
-    //   case MovieActionTypes.ADD_CAST:
-    //     let movieId = action.payload.id;
-    //       return {
-    //           ...state,
-    //             movies: [...state.movies, state.find(movie => movie.id === movieId)]
-    //       }
+      } as MovieInfoState;
     default:
       return state;
   }
