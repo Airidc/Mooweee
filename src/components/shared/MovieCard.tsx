@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { Movie } from "../Movies/movies-reducer";
 import { TmdbState } from "../../store/initial-state";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import MovieGenre from "./MovieGenre";
 import MovieRatings from "./MovieRatings";
 

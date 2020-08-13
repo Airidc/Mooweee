@@ -23,7 +23,7 @@
   }
 
   &--title {
-    color: $pale-green;
+    color: $persian-green;
   }
 
   &--genre--wrap {
@@ -71,4 +71,13 @@
 
 .actor--info {
   width: 70%;
+}
+
+.movie--link {
+  border-bottom: 2px solid $persian-green;
+}
+
+.movie--not-found {
+  line-height: 1.5em;
+  text-align: center;
 }
