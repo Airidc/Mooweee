@@ -13,12 +13,15 @@
     padding-left: 2em;
   }
 
-  &--popular {
+  &--popular,
+  &--search {
     border-left: 5px solid $hollywood-cerise;
   }
 
-  &--trending {
+  &--trending,
+  &--genre {
     border-left: 5px solid $bondy-blue;
+    padding-left: 2em;
   }
 
   input {

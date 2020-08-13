@@ -20,7 +20,8 @@
   cursor: pointer;
 
   @media screen and (min-width: 750px) {
-    width: 450px;
+    min-width: 300px;
+    max-width: 450px;
     height: 350px;
   }
 

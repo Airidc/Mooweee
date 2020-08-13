@@ -89,7 +89,7 @@ export default function MovieInfoPage({
           <div className="movie--section">
             <h3 className="movie--section--title">Actors</h3>
             {movieInfo.cast.map((member) => (
-              <div className="actor-row">
+              <div className="actor-row" key={member.id}>
                 {member.profile_path ? (
                   <img
                     className="actor--profile-picture"

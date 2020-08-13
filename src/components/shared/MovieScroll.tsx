@@ -25,7 +25,12 @@ export default function MovieScroll({
   return (
     <>
       <div className={`headline headline--${section.toLowerCase()}`}>
-        <h1>{section.charAt(0).toUpperCase() + section.slice(1)} Movies</h1>
+        {section === "search" ? (
+          <h1>Search page results</h1>
+        ) : (
+          <h1>{section.charAt(0).toUpperCase() + section.slice(1)} Movies</h1>
+        )}
+
         <FilterWidget
           filteredGenre={filteredGenre}
           setFilteredGenre={setFilteredGenre}

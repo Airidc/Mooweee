@@ -4,8 +4,6 @@ import axios from "axios";
 
 import * as actions from "./movies-actions";
 import { RootState } from "../../store/store";
-import MovieCard from "../shared/MovieCard";
-import FilterWidget from "../shared/FilterWidget";
 import MovieScroll from "../shared/MovieScroll";
 
 export default function Movies(): ReactElement {
@@ -22,7 +20,7 @@ export default function Movies(): ReactElement {
             `${tmdb.apiUrl}${tmdb.endpointPaths.popularMovies}?api_key=${tmdb.apiKey}&language=en-US&page=1`
           )
         ).data;
-        console.log("reponse", response);
+
         dispatch({
           type: actions.MoviesActionTypes.ADD_POPULAR_MOVIES_TO_LIST,
           payload: response.results,

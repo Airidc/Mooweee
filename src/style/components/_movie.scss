@@ -11,10 +11,18 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 3em;
+  margin-bottom: 5em;
+
+  @media screen and (min-width: 750px) {
+    max-width: 750px;
+    margin: 0 auto;
+    margin-bottom: 3em;
+  }
 
   &--details {
     flex-direction: row;
+    align-items: center;
+    width: 100%;
   }
 
   &--info {
@@ -36,6 +44,10 @@
 .movie--poster {
   width: 49%;
   @include shadow;
+
+  @media only screen and (min-width: 750px) {
+    max-width: 300px;
+  }
 }
 
 .movie--description {

@@ -26,6 +26,10 @@ export interface Enpoints {
 export const tmdbInitialState: TmdbState = {
   genres: [
     {
+      id: -1,
+      name: "",
+    },
+    {
       id: 28,
       name: "Action",
     },

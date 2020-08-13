@@ -16,14 +16,6 @@ export default function FilterWidget({
   const [isExpanded, setIsExpanded] = useState(false);
   const genres = useSelector((state: RootState) => state.tmdb.genres);
 
-  // Adding "invalid" genre to be used as "All/none selected" genres
-  if (genres.findIndex((genre) => genre.id === -1)) {
-    genres.unshift({
-      id: -1,
-      name: "",
-    });
-  }
-
   return (
     <div className="filter" onClick={() => setIsExpanded(!isExpanded)}>
       <h4>{filteredGenre.name ? filteredGenre.name : "All"}</h4>
