@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Mooweee/static/css/main.af2bd669.chunk.css",
+    "main.js": "/Mooweee/static/js/main.639b0751.chunk.js",
+    "main.js.map": "/Mooweee/static/js/main.639b0751.chunk.js.map",
+    "runtime-main.js": "/Mooweee/static/js/runtime-main.ab794a50.js",
+    "runtime-main.js.map": "/Mooweee/static/js/runtime-main.ab794a50.js.map",
+    "static/js/2.a885091b.chunk.js": "/Mooweee/static/js/2.a885091b.chunk.js",
+    "static/js/2.a885091b.chunk.js.map": "/Mooweee/static/js/2.a885091b.chunk.js.map",
+    "index.html": "/Mooweee/index.html",
+    "precache-manifest.3ae3130106ac8e2de5e65df01346ba00.js": "/Mooweee/precache-manifest.3ae3130106ac8e2de5e65df01346ba00.js",
+    "service-worker.js": "/Mooweee/service-worker.js",
+    "static/css/main.af2bd669.chunk.css.map": "/Mooweee/static/css/main.af2bd669.chunk.css.map",
+    "static/js/2.a885091b.chunk.js.LICENSE.txt": "/Mooweee/static/js/2.a885091b.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/Mooweee/static/media/logo.5b0c2cbf.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ab794a50.js",
+    "static/js/2.a885091b.chunk.js",
+    "static/css/main.af2bd669.chunk.css",
+    "static/js/main.639b0751.chunk.js"
+  ]
+}
