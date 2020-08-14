@@ -16,7 +16,6 @@ export const tmdbReducer = (
   action: IAction<any, TmdbState>
 ): TmdbState => {
   switch (action.type) {
-    // case ADD_NEW_MOVIES
     default:
       return state;
   }

@@ -22,7 +22,6 @@
   }
 
   @media only screen and (min-width: 1200px) {
-    // width: 50%;
     flex-grow: unset;
   }
 
@@ -31,10 +30,8 @@
     justify-content: flex-end;
     fill: $athens-gray;
     width: 50%;
-    // order: 99;
     align-self: center;
     justify-self: flex-end;
-    // background-color: $background-contrast;
   }
 
   &--list {
@@ -43,10 +40,8 @@
     flex-direction: row;
     justify-content: space-between;
 
-    // background-color: $background-site;
     margin: 0;
     margin-bottom: 1em;
-    // border-radius: $radius;
 
     @media only screen and (min-width: 750px) {
       align-self: center;

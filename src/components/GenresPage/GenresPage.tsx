@@ -1,14 +1,13 @@
 import React, { ReactElement, useState, useEffect } from "react";
 import { RouteComponentProps, Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
 
-import axios from "axios";
 import MovieCard from "../shared/MovieCard";
-import * as actions from "./../Movies/movies-actions";
 import { Genre } from "../../store/initial-state";
 import { Movie } from "../Movies/movies-reducer";
 import MovieGenre from "../shared/MovieGenre";
+import { usePopulateMovies } from "../../hooks/UsePopulateMovies";
 
 export default function GenresPage({
   location,
@@ -19,8 +18,9 @@ export default function GenresPage({
     id: -1,
     name: "",
   });
-  const dispatch = useDispatch();
   const [movies, setMovies] = useState([] as Movie[]);
+
+  usePopulateMovies();
 
   useEffect(() => {
     const genreValueFromQuery = decodeURI(
@@ -34,47 +34,25 @@ export default function GenresPage({
       setGenreFromQuery(genreMatched);
     }
 
-    console.log("movies from state:", moviesFromState);
-    if (!moviesFromState.popular.length || !moviesFromState.trending.length) {
-      (async () => {
-        const response = (
-          await axios.get(
-            `${tmdb.apiUrl}${tmdb.endpointPaths.popularMovies}?api_key=${tmdb.apiKey}&language=en-US&page=1`
-          )
-        ).data;
-
-        dispatch({
-          type: actions.MoviesActionTypes.ADD_POPULAR_MOVIES_TO_LIST,
-          payload: response.results,
-        });
-
-        (async () => {
-          const response = (
-            await axios.get(
-              `${tmdb.apiUrl}${tmdb.endpointPaths.trendingMoviesToday}?api_key=${tmdb.apiKey}&language=en-US&page=1`
-            )
-          ).data;
-          dispatch({
-            type: actions.MoviesActionTypes.ADD_TRENDING_MOVIES_TO_LIST,
-            payload: response.results,
-          });
-        })();
-      })();
-    }
-
     const concatinatedMovies = [
       ...moviesFromState.popular.filter((movie) =>
         movie.genre_ids.some((id) => id === genreFromQuery.id)
       ),
-      ...moviesFromState.trending.filter((movie) =>
-        movie.genre_ids.some((id) => id === genreFromQuery.id)
-      ),
     ];
 
-    const filteredMovies = concatinatedMovies.filter(
-      (m, index) => concatinatedMovies.indexOf(m) === index
-    );
-    setMovies(filteredMovies);
+    moviesFromState.trending.forEach((movie) => {
+      if (
+        concatinatedMovies.some((m) => m.id === movie.id) ||
+        movie.genre_ids.some((id) => id !== genreFromQuery.id)
+      ) {
+        // Skipping dupliciate movie
+        return;
+      }
+
+      concatinatedMovies.push(movie);
+    });
+
+    setMovies(concatinatedMovies);
   }, [
     location,
     moviesFromState.popular,
@@ -95,7 +73,7 @@ export default function GenresPage({
             ) : (
               <>
                 <h1 className="headline--genre">
-                  Awwww, that's embarrassing... Try picking other genre:
+                  Ahh, that's embarrassing... Try picking other genre:
                 </h1>
                 <div className="genre--genres-wrapper">
                   {tmdb.genres.map(

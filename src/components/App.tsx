@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "../store/store";
 
 import Header from "./shared/Header";
-import Home from "./Movies/Movies";
+import Movies from "./Movies/Movies";
 import MovieInfoPage from "./MovieInfo/MovieInfoPage";
 import SearchPage from "./SearchPage/SearchPage";
 import GenresPage from "./GenresPage/GenresPage";
+import RandomPage from "./RandomPage/RandomPage";
+import Footer from "./shared/Footer";
 
 function App() {
   const closeMenu = (e: React.MouseEvent) => {
@@ -19,7 +21,6 @@ function App() {
     let menuElem = document.querySelector(".nav");
 
     if (menuElem && !menuElem.classList.contains("hide-mobile")) {
-      console.log("it's open!");
       // close menu
       menuElem.classList.add("hide-mobile");
       e.preventDefault();
@@ -31,11 +32,13 @@ function App() {
       <Router>
         <Header></Header>
         <div className="content" onClick={closeMenu}>
-          <Route exact path="/" component={Home}></Route>
+          <Route exact path="/" component={Movies}></Route>
           <Route exact path="/movie/:id" component={MovieInfoPage}></Route>
           <Route path="/search/:query" component={SearchPage}></Route>
           <Route path="/genres" component={GenresPage}></Route>
+          <Route exact path="/random" component={RandomPage}></Route>
         </div>
+        <Footer></Footer>
       </Router>
     </Provider>
   );

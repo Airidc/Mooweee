@@ -6,9 +6,5 @@ interface Props {
 }
 
 export default function MovieGenre({ genre }: Props): ReactElement {
-  return (
-    <p className="movie--genre" key={genre.id}>
-      {genre.name}
-    </p>
-  );
+  return <p className="movie--genre">{genre.name}</p>;
 }

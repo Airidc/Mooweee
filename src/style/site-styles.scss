@@ -1,9 +1,10 @@
 ﻿@charset 'utf-8';
 
-@import "base/config", "base/colors", "mixins/mixins", "vendor/normalize";
+@import "base/config", "base/colors", "vendor/normalize";
 
 @import "components/global", "components/content", "components/logo",
   "components/header", "components/nav", "components/scrollable",
   "components/movie-card", "components/movie-genre", "components/movie-ratings",
   "components/movie", "components/headline", "components/search-input",
-  "components/filter", "components/genres-page";
+  "components/filter", "components/genres-page", "components/footer",
+  "components/actor";

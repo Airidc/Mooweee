@@ -1,0 +1,21 @@
+.actor-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actor--profile-picture {
+  width: 15%;
+  object-fit: cover;
+
+  &--none {
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+    text-align: center;
+  }
+}
+
+.actor--info {
+  width: 70%;
+}

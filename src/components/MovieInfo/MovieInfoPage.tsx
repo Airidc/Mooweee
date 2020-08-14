@@ -32,7 +32,6 @@ export default function MovieInfoPage({
             `${tmdb.apiUrl}${tmdb.endpointPaths.searchMovieById}${match.params.id}?api_key=${tmdb.apiKey}&language=en-US`
           )
         ).data as MovieInfo;
-        console.log("Movie:", movieResp);
         const castResp = (
           await axios.get(
             `${tmdb.apiUrl}${tmdb.endpointPaths.cast}?api_key=${tmdb.apiKey}&language=en-US`.replace(
@@ -41,7 +40,6 @@ export default function MovieInfoPage({
             )
           )
         ).data;
-        console.log("Cast:", castResp);
 
         movieResp.cast = castResp.cast;
 

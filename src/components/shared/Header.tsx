@@ -28,8 +28,6 @@ export default function Header(): ReactElement {
       return;
     }
 
-    console.log("current exists");
-
     browserHistory.push(`/search/${searchQuery.current?.value}`);
     searchQuery.current.value = "";
   };
@@ -62,7 +60,7 @@ export default function Header(): ReactElement {
       <header className="header">
         <div className="logo" onClick={goHome}>
           <img src={logo} alt="logo" />
-          <h3 className="logo--text">MooWee!</h3>
+          <h3 className="logo--text">MooWeee!</h3>
         </div>
         <div className="nav--hamburger hide-desktop">
           <svg

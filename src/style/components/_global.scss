@@ -1,6 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato&family=Roboto:ital,wght@0,400;1,300&display=swap");
 
 html {
@@ -16,9 +14,8 @@ html {
 html,
 body,
 #root {
-  // height: 100%;
+  min-height: 100vh;
   padding: 0;
-  // width: 100%;
   margin: 0;
 }
 

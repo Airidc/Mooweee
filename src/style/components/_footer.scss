@@ -1,0 +1,24 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  padding: 2em;
+
+  color: $silver-sand;
+
+  p {
+    margin-top: 1em;
+  }
+
+  a {
+    border-bottom: 2px solid $persian-green;
+  }
+
+  svg {
+    margin-left: 0.25em;
+    path {
+      fill: $silver-sand;
+    }
+  }
+}

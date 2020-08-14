@@ -1,4 +1,5 @@
 import React, { ReactElement, useState } from "react";
+
 import { Movie } from "../Movies/movies-reducer";
 import MovieCard from "./MovieCard";
 import { useSelector } from "react-redux";
@@ -8,7 +9,13 @@ import { Link } from "react-router-dom";
 
 interface MovieScrollProps {
   movies: Movie[];
-  section: string;
+  section: MovieScrollSection;
+}
+
+export enum MovieScrollSection {
+  popular = "Popular",
+  trending = "Trending",
+  search = "Search",
 }
 
 export default function MovieScroll({
@@ -25,7 +32,7 @@ export default function MovieScroll({
   return (
     <>
       <div className={`headline headline--${section.toLowerCase()}`}>
-        {section === "search" ? (
+        {section === MovieScrollSection.search ? (
           <h1>Search page results</h1>
         ) : (
           <h1>{section.charAt(0).toUpperCase() + section.slice(1)} Movies</h1>
@@ -46,6 +53,10 @@ export default function MovieScroll({
                 <MovieCard tmdb={tmdb} movie={movie} key={movie.id}></MovieCard>
               );
             })
+          ) : section === MovieScrollSection.search ? (
+            <h2 className="movie--not-found">
+              No Movies found. Try searching for something else.
+            </h2>
           ) : (
             <h2 className="movie--not-found">
               Looks like there are no {section.toLowerCase()}{" "}
